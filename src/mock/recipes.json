@@ -1,0 +1,111 @@
+{
+    "success": true,
+    "data": {
+        "userId": "1773463565",
+        "recipes": [
+            {
+                "uid": "88725645",
+                "title": "Eggs Benedict",
+                "description": "Some kind of French egg dish thingy.",
+                "tags": [
+                    "eggs",
+                    "breakfast",
+                    "low-calorie"
+                ],
+                "ingredients": [
+                    {
+                        "type": "egg",
+                        "amount": 2,
+                        "measurement": null
+                    },
+                    {
+                        "type": "milk",
+                        "amount": 0.25,
+                        "measurement": "cup"
+                    }
+                ],
+                "steps": [
+                    {
+                        "title": "Step 1",
+                        "description": "throw the eggs in the trash."
+                    },
+                    {
+                        "title": "Step 2",
+                        "description": "Order Takeout"
+                    }   
+                ],
+                "notes": [
+                    {
+                        "timestamp": 72764355355,
+                        "title": "Bleh",
+                        "description": "It's gross"
+
+                    }
+                ],
+                "variations": []
+            },
+            {
+                "uid": "88725882",
+                "title": "French Bread",
+                "description": "A doughy white bread of deliciousness.",
+                "tags": [
+                    "bread",
+                    "side",
+                    "guilty-pleasure",
+                    "French"
+                ],
+                "ingredients": [
+                    {
+                        "type": "flour",
+                        "amount": 2,
+                        "measurement": "cup"
+                    },
+                    {
+                        "type": "milk",
+                        "amount": 0.75,
+                        "measurement": "cup"
+                    }
+                ],
+                "steps": [
+                    {
+                        "title": "Step 1",
+                        "description": "mix flour and milk in large bowl."
+                    },
+                    {
+                        "title": "Step 2",
+                        "description": "Bake at 400 degrees F. for 35 mins."
+                    }   
+                ],
+                "notes": [
+                    {
+                        "timestamp": 7745635235526,
+                        "title": "Extra Crispy",
+                        "description": "mmm"
+
+                    }
+                ],
+                "variations": [
+                    {
+                        "timestamp": 17767456366,
+                        "title": "Herb Crusted",
+                        "description": "Crunchy & Delicious",
+                        "ingredients": [
+                            {
+                                "type": "thyme",
+                                "amount": 2,
+                                "measurement": "tbsp"
+                            }
+                        ],
+                        "steps": [
+                            {
+                                "title": "Step 1",
+                                "description": "Add thyme and nead into dough. Work Thoroughly."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]   
+    },
+    "error": null
+}
