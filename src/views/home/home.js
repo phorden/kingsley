@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addRecipe } from './home-actions-reducers';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
 
     render() {
         return (
@@ -10,3 +12,34 @@ export default class Home extends React.Component {
         )
     }
 }
+
+const Recipe = ({ recipes }) => {
+    <ul>
+        {
+            recipes.map(el => {
+                <li key={el.id}>{ el.title }</li>
+            })
+        }
+    </ul>
+}
+
+const mapStateToProps = state => {
+    return {
+        recipes: state.recipes
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addrecipe: id => {
+            dispatch(addRecipe(id))
+        }
+    }
+}
+
+const Recipe = connect(
+    mapStateToProps,
+    mapDispatchToProps
+) ( Recipe );
+
+export default Recipe;
