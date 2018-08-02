@@ -1,16 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-// actions
-import { addRecipe } from './home-actions-reducers';
 import { getRecipes } from '../recipe/recipe-actions-reducers';
 
 // custom components
-import RecipeList from '../recipeList/recipeList';
+import Recipe from '../recipe/recipe';
 
-class HomePage extends React.Component {
+class RecipeListComponent extends React.Component {
 
   componentDidMount(){
     this.props.getRecipes();
@@ -19,12 +16,16 @@ class HomePage extends React.Component {
   render(){
     return (
       <div>
-        <h1>Kingsley</h1>
-
-        <h2>Get Started</h2>
-        <Link to="/recipes">Recipe List</Link>
-
-        <RecipeList />
+        <h2>Recipe List</h2>
+        <div>
+          {
+            this.props.recipes 
+            &&
+            this.props.recipes.map((recipe, index) => {
+              return (<div key={index}><Recipe data={recipe} /></div>);
+            })
+          }
+        </div>
       </div>
     );
   }
@@ -38,21 +39,18 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      addrecipe: id => {
-          dispatch(addRecipe(id))
-      },
       getRecipes: () => { dispatch(getRecipes()) }
   }
 }
 
-const Home = connect(
+const RecipeList = connect(
   mapStateToProps,
   mapDispatchToProps
-) ( HomePage );
+) ( RecipeListComponent );
 
-Home.PropTypes = {
+RecipeList.PropTypes = {
   recipes: PropTypes.array,
   getRecipes: PropTypes.func
 };
 
-export default Home;
+export default RecipeList;

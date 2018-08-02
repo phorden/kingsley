@@ -1,5 +1,8 @@
 import React from 'react';
 
+// styles
+import './recipe.scss';
+
 class Recipe extends React.Component {
   render() {    
     const {
@@ -12,7 +15,7 @@ class Recipe extends React.Component {
       variations
     } = this.props.data;
     return (
-        <section>
+        <section className="recipe-card">
           <h2>{title}</h2>
           <p>{description}</p>
 
@@ -21,7 +24,7 @@ class Recipe extends React.Component {
             tags.map((value, index) => {
               return (
                 <section key={index}>
-                  <span>{value}</span>
+                  <span>{value}, </span>
                 </section>
               )
             })
@@ -32,9 +35,7 @@ class Recipe extends React.Component {
             ingredients.map((value, index) => {
               return (
               <section key={index}>
-                <span>{value.type}</span>
-                <span>{value.amount}</span>
-                <span>{value.measurement}</span>
+                <h4>{value.type} {value.amount} {value.measurement}</h4>
               </section>
               )
             })
@@ -45,8 +46,8 @@ class Recipe extends React.Component {
             steps.map((value, index) => {
               return (
               <section key={index}>
-                <span>{value.title}</span>
-                <span>{value.description}</span>
+                <h4>{value.title}</h4>
+                <h4>{value.description}</h4>
               </section>
               )
             })
@@ -57,9 +58,9 @@ class Recipe extends React.Component {
             notes.map((value, index) => {
               return (
               <section key={index}>
-                <span>{value.timestamp}</span>
-                <span>{value.title}</span>
-                <span>{value.description}</span>
+                <h4>{value.timestamp}</h4>
+                <h4>{value.title}</h4>
+                <h4>{value.description}</h4>
               </section>
               )
             })
@@ -70,7 +71,7 @@ class Recipe extends React.Component {
             variations.map((value, index) => {
               return (
               <section key={index}>
-                <span>TODO: Fix This</span>
+                <h4>TODO: Fix This</h4>
               </section>
               )
             })
